@@ -73,7 +73,18 @@
   }
   .link:hover{background:var(--card-h); border-color:rgba(214,168,92,.45); transform:translateY(-2px)}
   .link:active{transform:scale(.98)}
-  .link svg{width:22px; height:22px; flex:none; color:var(--gold)}
+  /* Marka renkli ikon kutuları */
+  .ic{width:40px; height:40px; flex:none; border-radius:12px; display:grid; place-items:center; background:var(--c); color:#fff}
+  .ic svg{width:22px; height:22px}
+  .link{--c:var(--gold)}
+  .link:hover{border-color:color-mix(in srgb,var(--c) 70%,transparent); box-shadow:0 10px 30px -12px color-mix(in srgb,var(--c) 60%,transparent)}
+  .ig{--c:#E1306C} .ig .ic{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+  .yt{--c:#FF0033}
+  .tt{--c:#FE2C55} .tt .ic{background:#000; border:1px solid rgba(255,255,255,.12)} .tt .ic svg{filter:drop-shadow(-1.5px -1px 0 #25F4EE) drop-shadow(1.5px 1px 0 #FE2C55)}
+  .xx{--c:#e7e9ea} .xx .ic{background:#000; border:1px solid rgba(255,255,255,.18)}
+  .fb{--c:#1877F2}
+  .imdb{--c:#F5C518} .imdb .ic{color:#000}
+  .mail{--c:#d6a85c} .mail .ic{color:#1c1405}
   .link .t{flex:1}
   .link .t small{display:block; color:var(--muted); font-weight:400; font-size:.78rem}
   .link .arrow{width:16px; height:16px; color:var(--muted)}
@@ -94,44 +105,44 @@
   </header>
 
   <nav class="links" aria-label="Bağlantılar">
-    <a class="link" href="https://www.instagram.com/roportajadam/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+    <a class="link ig" href="https://www.instagram.com/roportajadam/" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
       <span class="t">Instagram<small>@roportajadam</small></span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
 
-    <a class="link" href="https://www.youtube.com/@mahsunkaraca" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor"/></svg>
+    <a class="link yt" href="https://www.youtube.com/@mahsunkaraca" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor"/></svg></span>
       <span class="t">YouTube<small>@mahsunkaraca</small></span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
 
-    <a class="link" href="https://www.tiktok.com/@roportajadam" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.5 5 4.8"/></svg>
+    <a class="link tt" href="https://www.tiktok.com/@roportajadam" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.5 5 4.8"/></svg></span>
       <span class="t">TikTok<small>@roportajadam</small></span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
 
-    <a class="link" href="https://x.com/roportajadam" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4 4 20" stroke-linecap="round"/></svg>
+    <a class="link xx" href="https://x.com/roportajadam" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4 4 20" stroke-linecap="round"/></svg></span>
       <span class="t">X<small>@roportajadam</small></span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
 
-    <a class="link" href="https://www.facebook.com/roportajadam" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M15 8h-1.5A2.5 2.5 0 0 0 11 10.5V21M8.5 13h6"/></svg>
+    <a class="link fb" href="https://www.facebook.com/roportajadam" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M15 8h-1.5A2.5 2.5 0 0 0 11 10.5V21M8.5 13h6"/></svg></span>
       <span class="t">Facebook<small>roportajadam</small></span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
 
-    <a class="link" href="https://www.imdb.com/name/nm10018889/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M7 10v4M10.5 10v4M14 10v4l2-2 2 2v-4"/></svg>
+    <a class="link imdb" href="https://www.imdb.com/name/nm10018889/" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M7 10v4M10.5 10v4M14 10v4l2-2 2 2v-4"/></svg></span>
       <span class="t">IMDb<small>Mahsun Karaca</small></span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
 
-    <a class="link" href="mailto:mahsun@odiseytalent.com">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+    <a class="link mail" href="mailto:mahsun@odiseytalent.com">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg></span>
       <span class="t">E-posta<small>mahsun@odiseytalent.com</small></span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
