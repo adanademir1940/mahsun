@@ -14,7 +14,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230c0a09'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23d6a85c' font-family='Georgia,serif'>M</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -38,30 +38,40 @@
   }
   main{position:relative; z-index:1; width:100%; max-width:440px; margin:0 auto; padding:48px 16px}
 
-  /* İsim çerçevesi: cam efekti + dönen altın kenarlık */
-  @property --a{syntax:"<angle>"; inherits:false; initial-value:0deg}
+  /* Üst kısım: hareketli aurora kart + iki satırlı modern isim */
   header{
-    position:relative; text-align:center; padding:30px 20px; border-radius:22px;
-    background:linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
-    backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-    box-shadow:0 20px 50px -20px rgba(214,168,92,.35), inset 0 1px 0 rgba(255,255,255,.06);
+    position:relative; overflow:hidden; isolation:isolate; text-align:center;
+    padding:40px 20px 38px; border-radius:28px;
+    background:#13100d; border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 30px 60px -30px rgba(214,168,92,.45);
     animation:rise .7s ease both;
   }
-  header::before{
-    content:""; position:absolute; inset:0; border-radius:inherit; padding:1.5px; pointer-events:none;
-    background:conic-gradient(from var(--a), rgba(214,168,92,.15), #f3d9a4, var(--gold), rgba(214,168,92,.15) 40%, rgba(214,168,92,.15) 60%, #f3d9a4, rgba(214,168,92,.15));
-    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor; mask-composite:exclude;
-    animation:spin 6s linear infinite;
+  header::before,header::after{
+    content:""; position:absolute; z-index:-1; border-radius:50%; filter:blur(40px); opacity:.55;
   }
-  @keyframes spin{to{--a:360deg}}
+  header::before{width:220px; height:220px; left:-60px; top:-90px; background:#d6a85c; animation:drift1 9s ease-in-out infinite alternate}
+  header::after{width:200px; height:200px; right:-70px; bottom:-110px; background:#b4532a; animation:drift2 11s ease-in-out infinite alternate}
+  @keyframes drift1{to{transform:translate(90px,50px) scale(1.15)}}
+  @keyframes drift2{to{transform:translate(-80px,-40px) scale(1.2)}}
+  /* ince ızgara dokusu */
+  header .grid{
+    position:absolute; inset:0; z-index:-1; opacity:.35;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:22px 22px;
+    -webkit-mask:radial-gradient(ellipse at center,#000 30%,transparent 75%); mask:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+  }
   h1{
-    font-family:"Space Grotesk",Inter,system-ui,sans-serif; font-weight:700;
-    font-size:clamp(1.9rem,8.5vw,2.5rem); line-height:1.1; letter-spacing:-.025em;
-    background:linear-gradient(180deg,#fff 30%,#e9cf9f); -webkit-background-clip:text; background-clip:text; color:transparent;
+    font-family:Unbounded,Inter,system-ui,sans-serif; font-weight:700; text-transform:uppercase;
+    font-size:clamp(2rem,10.5vw,2.9rem); line-height:.98; letter-spacing:-.02em;
   }
-  .role{margin-top:8px; color:var(--gold); font-size:.78rem; font-weight:600; letter-spacing:.32em; text-transform:uppercase}
-
+  h1 span{display:block}
+  h1 .first{
+    background:linear-gradient(100deg,#fff 0%,#fff 40%,#f3d9a4 50%,#fff 60%,#fff 100%);
+    background-size:250% 100%; -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:shine 5s ease-in-out infinite;
+  }
+  h1 .last{margin-top:6px; font-weight:500; letter-spacing:.06em; background:linear-gradient(180deg,#f3d9a4,#c8913f); -webkit-background-clip:text; background-clip:text; color:transparent}
+  @keyframes shine{0%,40%{background-position:100% 0} 70%,100%{background-position:0 0}}
   .links{display:grid; gap:12px; margin-top:36px}
   .link{
     display:flex; align-items:center; gap:14px; min-height:60px; padding:12px 18px;
@@ -101,7 +111,8 @@
 <body>
 <main>
   <header>
-    <h1>Mahsun Karaca</h1>
+    <div class="grid" aria-hidden="true"></div>
+    <h1 aria-label="Mahsun Karaca"><span class="first">Mahsun</span><span class="last">Karaca</span></h1>
   </header>
 
   <nav class="links" aria-label="Bağlantılar">
