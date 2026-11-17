@@ -14,7 +14,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230c0a09'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23d6a85c' font-family='Georgia,serif'>M</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -38,8 +38,28 @@
   }
   main{position:relative; z-index:1; width:100%; max-width:440px; margin:0 auto; padding:48px 16px}
 
-  header{text-align:center; animation:rise .7s ease both}
-  h1{font-family:"Playfair Display",Georgia,serif; font-weight:600; font-size:2.6rem; line-height:1.1}
+  /* İsim çerçevesi: cam efekti + dönen altın kenarlık */
+  @property --a{syntax:"<angle>"; inherits:false; initial-value:0deg}
+  header{
+    position:relative; text-align:center; padding:30px 20px; border-radius:22px;
+    background:linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+    backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    box-shadow:0 20px 50px -20px rgba(214,168,92,.35), inset 0 1px 0 rgba(255,255,255,.06);
+    animation:rise .7s ease both;
+  }
+  header::before{
+    content:""; position:absolute; inset:0; border-radius:inherit; padding:1.5px; pointer-events:none;
+    background:conic-gradient(from var(--a), rgba(214,168,92,.15), #f3d9a4, var(--gold), rgba(214,168,92,.15) 40%, rgba(214,168,92,.15) 60%, #f3d9a4, rgba(214,168,92,.15));
+    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor; mask-composite:exclude;
+    animation:spin 6s linear infinite;
+  }
+  @keyframes spin{to{--a:360deg}}
+  h1{
+    font-family:"Space Grotesk",Inter,system-ui,sans-serif; font-weight:700;
+    font-size:clamp(1.9rem,8.5vw,2.5rem); line-height:1.1; letter-spacing:-.025em;
+    background:linear-gradient(180deg,#fff 30%,#e9cf9f); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
   .role{margin-top:8px; color:var(--gold); font-size:.78rem; font-weight:600; letter-spacing:.32em; text-transform:uppercase}
 
   .links{display:grid; gap:12px; margin-top:36px}
