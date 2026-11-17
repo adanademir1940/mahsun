@@ -4,67 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mahsun | Oyuncu</title>
-<meta name="description" content="Oyuncu Mahsun: showreel, oyuncu CV'si, sosyal medya ve iletişim bilgileri.">
+<meta name="description" content="Oyuncu Mahsun: sosyal medya hesapları ve iletişim.">
 <meta name="theme-color" content="#0c0a09">
-
-<!-- Link paylaşıldığında (WhatsApp, Instagram, X) görünen önizleme -->
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Mahsun | Oyuncu">
-<meta property="og:description" content="Showreel, CV ve iletişim için tek link.">
+<meta property="og:description" content="Sosyal medya ve iletişim için tek link.">
 <meta property="og:url" content="https://mahsun.info">
-<meta property="og:image" content="https://mahsun.info/foto.jpg">
-<meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230c0a09'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23d6a85c' font-family='Georgia,serif'>M</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#0c0a09; --bg2:#1c1917; --card:rgba(255,255,255,.04); --card-h:rgba(255,255,255,.08);
-    --line:rgba(255,255,255,.09); --text:#fafaf9; --muted:#a8a29e; --gold:#d6a85c; --gold-ink:#1c1405;
+    --bg:#0c0a09; --card:rgba(255,255,255,.04); --card-h:rgba(255,255,255,.08);
+    --line:rgba(255,255,255,.09); --text:#fafaf9; --muted:#a8a29e; --gold:#d6a85c;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
   body{
-    min-height:100vh; background:var(--bg); color:var(--text);
+    min-height:100vh; min-height:100dvh; background:var(--bg); color:var(--text);
     font-family:Inter,system-ui,-apple-system,sans-serif; line-height:1.5;
+    display:flex; align-items:center;
     background-image:
       radial-gradient(ellipse 80% 50% at 50% -10%, rgba(214,168,92,.18), transparent 70%),
       radial-gradient(ellipse 60% 40% at 50% 110%, rgba(214,168,92,.07), transparent 70%);
     background-attachment:fixed;
   }
-  /* Film greni */
   body::before{
     content:""; position:fixed; inset:0; pointer-events:none; opacity:.05; z-index:0;
     background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
-  main{position:relative; z-index:1; max-width:480px; margin:0 auto; padding:56px 16px 40px}
+  main{position:relative; z-index:1; width:100%; max-width:440px; margin:0 auto; padding:48px 16px}
 
-  /* Profil */
-  .profile{text-align:center; animation:rise .7s ease both}
-  .avatar{
-    width:128px; height:128px; margin:0 auto 20px; border-radius:50%; position:relative;
-    padding:3px; background:conic-gradient(from 210deg, var(--gold), #7c5a24, var(--gold), #f3d9a4, var(--gold));
-  }
-  .avatar img,.avatar .initial{
-    width:100%; height:100%; border-radius:50%; object-fit:cover; display:block;
-    border:3px solid var(--bg); background:var(--bg2);
-  }
-  .avatar .initial{display:none; place-items:center; font-family:"Playfair Display",Georgia,serif; font-size:56px; color:var(--gold)}
-  .avatar.no-photo img{display:none}
-  .avatar.no-photo .initial{display:grid}
-  h1{font-family:"Playfair Display",Georgia,serif; font-weight:600; font-size:2.4rem; letter-spacing:.01em; line-height:1.1}
-  .role{margin-top:6px; color:var(--gold); font-size:.78rem; font-weight:600; letter-spacing:.32em; text-transform:uppercase}
-  .bio{margin:16px auto 0; max-width:36ch; color:var(--muted); font-size:.95rem}
+  header{text-align:center; animation:rise .7s ease both}
+  h1{font-family:"Playfair Display",Georgia,serif; font-weight:600; font-size:2.6rem; line-height:1.1}
+  .role{margin-top:8px; color:var(--gold); font-size:.78rem; font-weight:600; letter-spacing:.32em; text-transform:uppercase}
 
-  .facts{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px}
-  .facts span{font-size:.75rem; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:5px 12px}
-  .facts b{color:var(--text); font-weight:500}
-
-  /* Linkler */
-  .links{display:grid; gap:12px; margin-top:32px}
+  .links{display:grid; gap:12px; margin-top:36px}
   .link{
     display:flex; align-items:center; gap:14px; min-height:60px; padding:12px 18px;
     background:var(--card); border:1px solid var(--line); border-radius:16px;
@@ -80,68 +58,24 @@
   .link .t small{display:block; color:var(--muted); font-weight:400; font-size:.78rem}
   .link .arrow{width:16px; height:16px; color:var(--muted)}
 
-  .link.feature{background:linear-gradient(135deg,#e4bd78,var(--gold) 55%,#b7863d); border:0; color:var(--gold-ink); min-height:72px}
-  .link.feature svg,.link.feature .arrow{color:var(--gold-ink)}
-  .link.feature .t small{color:rgba(28,20,5,.7)}
-  .link.feature:hover{filter:brightness(1.06)}
-
-  /* Son işler */
-  h2{margin:40px 0 14px; text-align:center; font-family:"Playfair Display",Georgia,serif; font-style:italic; font-weight:500; font-size:1.25rem; color:var(--muted)}
-  .works{list-style:none; border-top:1px solid var(--line)}
-  .works li{display:flex; justify-content:space-between; gap:12px; padding:14px 4px; border-bottom:1px solid var(--line); font-size:.92rem}
-  .works .what{color:var(--text)}
-  .works .what small{display:block; color:var(--muted); font-size:.78rem}
-  .works .yr{color:var(--gold); font-variant-numeric:tabular-nums; font-size:.85rem; white-space:nowrap}
-
-  footer{margin-top:44px; text-align:center; color:#57534e; font-size:.75rem; letter-spacing:.04em}
+  footer{margin-top:40px; text-align:center; color:#57534e; font-size:.75rem; letter-spacing:.04em}
 
   @keyframes rise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
   .links .link:nth-child(1){animation-delay:.10s} .links .link:nth-child(2){animation-delay:.16s}
   .links .link:nth-child(3){animation-delay:.22s} .links .link:nth-child(4){animation-delay:.28s}
-  .links .link:nth-child(5){animation-delay:.34s} .links .link:nth-child(6){animation-delay:.40s}
-  .links .link:nth-child(7){animation-delay:.46s} .links .link:nth-child(8){animation-delay:.52s}
+  .links .link:nth-child(5){animation-delay:.34s}
   @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
 </style>
 </head>
 <body>
 <main>
-
-  <!-- ============ PROFİL ============ -->
-  <section class="profile">
-    <!-- Fotoğraf: depoya "foto.jpg" adıyla kare bir fotoğraf yükle. Yoksa "M" harfi görünür. -->
-    <div class="avatar" id="avatar">
-      <img src="foto.jpg" alt="Mahsun" onerror="document.getElementById('avatar').classList.add('no-photo')">
-      <div class="initial" aria-hidden="true">M</div>
-    </div>
+  <header>
     <h1>Mahsun</h1>
     <p class="role">Oyuncu</p>
-    <p class="bio">Sahne, kamera ve seslendirme. Yeni projeler ve iş birlikleri için ulaşabilirsiniz.</p>
+  </header>
 
-    <!-- Oyuncu bilgileri: değerleri kendine göre düzenle, istemediğini sil -->
-    <div class="facts">
-      <span>Boy <b>1.80</b></span>
-      <span>Göz <b>Kahverengi</b></span>
-      <span>Saç <b>Siyah</b></span>
-      <span>Şehir <b>İstanbul</b></span>
-    </div>
-  </section>
-
-  <!-- ============ LİNKLER ============ -->
-  <!-- Her linkin href="#" kısmına kendi adresini yaz. Kullanmadığın linki komple sil. -->
+  <!-- Her linkin href kısmına kendi profil adresini yaz. Kullanmadığın linki komple sil. -->
   <nav class="links" aria-label="Bağlantılar">
-
-    <a class="link feature" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
-      <span class="t">Showreel İzle<small>Son çalışmalardan seçkiler</small></span>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
-    </a>
-
-    <a class="link" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
-      <span class="t">Oyuncu CV'si<small>PDF olarak indir</small></span>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
-    </a>
-
     <a class="link" href="https://instagram.com/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
       <span class="t">Instagram</span>
@@ -160,16 +94,9 @@
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
 
-    <a class="link" href="#" target="_blank" rel="noopener">
+    <a class="link" href="https://www.imdb.com/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M7 10v4M10.5 10v4M14 10v4l2-2 2 2v-4"/></svg>
-      <span class="t">IMDb Profili</span>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
-    </a>
-
-    <!-- WhatsApp: 905XXXXXXXXX yerine başında 90 olacak şekilde numarayı yaz -->
-    <a class="link" href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1.1-4A8 8 0 1 1 20 12z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a3.5 3.5 0 0 1-1.8-1.8l.8-1-1-2z" fill="currentColor" stroke="none"/></svg>
-      <span class="t">Menajer / WhatsApp<small>Projeler ve ajans görüşmeleri</small></span>
+      <span class="t">IMDb</span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
 
@@ -180,16 +107,7 @@
     </a>
   </nav>
 
-  <!-- ============ SON İŞLER ============ -->
-  <!-- Örnek satırlar: kendi işlerinle değiştir ya da bu bölümü sil -->
-  <h2>Son İşler</h2>
-  <ul class="works">
-    <li><span class="what">Dizi Adı<small>Dizi · Karakter Adı</small></span><span class="yr">2026</span></li>
-    <li><span class="what">Film Adı<small>Sinema · Yan Rol</small></span><span class="yr">2025</span></li>
-    <li><span class="what">Oyun Adı<small>Tiyatro · Başrol</small></span><span class="yr">2024</span></li>
-  </ul>
-
-  <footer>© <span id="y">2026</span> Mahsun · mahsun.info</footer>
+  <footer>© <span id="y">2026</span> Mahsun</footer>
 </main>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
