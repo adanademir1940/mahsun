@@ -103,6 +103,37 @@
   .btn:hover{background:#1d4ed8}
   .btn:active{transform:scale(.98)}
   .finder .btn{width:100%; margin-top:14px}
+
+  /* Ruhsat formu */
+  .wa{width:22px; height:22px; flex:none}
+  .waNote{display:flex; gap:12px; align-items:flex-start; background:#e9fbef; border:1px solid #b7ecc8; color:#14532d; border-radius:12px; padding:12px 14px; font-size:.84rem; line-height:1.45; margin:14px 0 16px}
+  .waNote .wa{width:30px; height:30px; color:#fff; background:#25d366; border-radius:50%; padding:5px}
+  .waNote b{display:block; font-size:.9rem; color:#052e16}
+  .field small{display:block; font-size:.7rem; color:var(--muted); margin-top:4px}
+  .field.full{grid-column:1/-1}
+  .phone{display:flex; height:46px; border:1.5px solid var(--line); border-radius:10px; overflow:hidden}
+  .phone:focus-within{border-color:var(--or)}
+  .phone span{display:grid; place-items:center; padding:0 10px; background:var(--bg); color:var(--muted); font-size:.88rem; font-weight:600; border-right:1px solid var(--line)}
+  .phone input{border:0; height:100%; border-radius:0}
+  .field .upload{display:flex; margin:0; font-weight:500; align-items:center; gap:10px; height:46px; border:1.5px dashed #cbd5e1; border-radius:10px; padding:0 12px; font-size:.84rem; color:var(--muted); cursor:pointer; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+  .field .upload:hover{border-color:var(--or); color:var(--or)}
+  .field .upload.ok{border-style:solid; border-color:#22c55e; color:#15803d}
+  .upload input{display:none}
+  .or{display:flex; align-items:center; gap:10px; color:#94a3b8; font-size:.72rem; font-weight:600; margin:2px 0}
+  .or::before,.or::after{content:""; flex:1; height:1px; background:var(--line)}
+  .kvkk{display:flex; gap:8px; align-items:flex-start; font-size:.74rem; color:var(--muted); margin-top:12px; cursor:pointer}
+  .kvkk input{margin-top:2px; accent-color:var(--or)}
+  .btn.wa-btn{background:#25d366; color:#fff}
+  .btn.wa-btn:hover{background:#1ebe5a}
+  .field.bad input,.field.bad .phone,.field.bad .plate{border-color:var(--red)!important}
+  .done{display:none; text-align:center; padding:26px 6px 10px}
+  .done .wa{width:64px; height:64px; color:#fff; background:#25d366; border-radius:50%; padding:12px; margin-bottom:14px; box-shadow:0 12px 30px -10px rgba(37,211,102,.7)}
+  .done h4{font-size:1.25rem; margin-bottom:6px}
+  .done p{color:var(--muted); font-size:.9rem}
+  .done button{margin-top:16px; color:var(--or); font-weight:600; font-size:.88rem}
+  .finder.sent form{display:none}
+  @media (max-width:520px){.fgrid{grid-template-columns:1fr}}
+  .finder.sent .done{display:block}
   .finder .hint{margin-top:10px; font-size:.76rem; color:var(--muted); text-align:center}
   @media (max-width:900px){.hero .wrap{grid-template-columns:1fr; gap:32px; padding-top:40px; padding-bottom:48px}}
 
@@ -311,7 +342,7 @@
   <div>
     <span class="eyebrow"><i></i>3 milyondan fazla parça stokta</span>
     <h1 class="cond">Aracına <em>uygun</em> parça, tek tıkla kapında.</h1>
-    <p class="lead">Aracını seç, sadece ona uyan orijinal ve muadil parçaları gör. Yanlış parça derdine son.</p>
+    <p class="lead">Ruhsat bilgilerini gönder, ustalarımız aracına birebir uyan parçayı bulsun. Yanlış parça derdine son.</p>
     <div class="stats">
       <div><b>320.000+</b>Mutlu müşteri</div>
       <div><b>%99,2</b>Doğru parça oranı</div>
@@ -320,39 +351,40 @@
   </div>
 
   <div class="finder" id="finder">
-    <h3 class="cond"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M6 17l1.5-6.5A2 2 0 0 1 9.4 9h5.2a2 2 0 0 1 1.9 1.5L18 17"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/><path d="M3 13h2M19 13h2"/></svg>Aracını Seç</h3>
-    <div class="tabs" role="tablist">
-      <button class="on" data-t="car" onclick="setTab('car',this)">Marka / Model</button>
-      <button data-t="plate" onclick="setTab('plate',this)">Plaka ile</button>
-      <button data-t="oem" onclick="setTab('oem',this)">OEM No</button>
-    </div>
+    <h3 class="cond"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M5.5 16c.6-1.5 1.7-2.2 3-2.2s2.4.7 3 2.2M14 10h4M14 13h4"/></svg>Ruhsat Bilgileriyle Parça Bul</h3>
 
-    <div id="t-car">
+    <div class="waNote"><svg class="wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.86 3 3.05 8.8 3.05 15.97c0 2.29.6 4.53 1.74 6.5L3 29l6.7-1.75a12.96 12.96 0 0 0 6.33 1.62h.01c7.17 0 13-5.8 13-12.97 0-3.47-1.35-6.73-3.8-9.18A12.9 12.9 0 0 0 16.04 3zm0 23.68h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.97 1.04 1.06-3.87-.26-.4a10.74 10.74 0 0 1-1.65-5.74c0-5.96 4.85-10.8 10.82-10.8 2.89 0 5.6 1.12 7.64 3.17a10.73 10.73 0 0 1 3.17 7.64c0 5.96-4.86 10.8-10.9 10.8zm5.93-8.09c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.16-.22.33-.84 1.06-1.03 1.27-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.27-.63-.54-.55-.73-.56h-.62c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.36c.16.22 2.3 3.5 5.56 4.91.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.41.19-1.55-.08-.13-.3-.21-.62-.37z"/></svg><span><b>Size WhatsApp'tan ulaşacağız</b>Ruhsat bilgilerinize göre aracınıza uygun parçayı ve fiyatını belirleyip sizi WhatsApp'tan arayacağız.</span></div>
+
+    <form id="ruhsatForm" novalidate onsubmit="event.preventDefault(); sendForm()">
       <div class="fgrid">
-        <div class="field"><label>Marka</label><select id="sMake" onchange="fillModels()"><option value="">Marka seçin</option></select></div>
-        <div class="field"><label>Model</label><select id="sModel" onchange="fillYears()" disabled><option>Model seçin</option></select></div>
-        <div class="field"><label>Yıl</label><select id="sYear" onchange="fillEngines()" disabled><option>Yıl seçin</option></select></div>
-        <div class="field"><label>Motor</label><select id="sEngine" disabled><option>Motor seçin</option></select></div>
+        <div class="field full" id="f-plate"><label>Plaka</label>
+          <div class="plate"><span>TR</span><input id="plateIn" placeholder="34 ABC 123" maxlength="11" autocomplete="off"></div>
+        </div>
+        <div class="field full" id="f-vin"><label>Şasi No (VIN)</label>
+          <input id="vinIn" placeholder="17 haneli şasi numarası" maxlength="17" autocomplete="off" style="letter-spacing:.06em">
+          <small>Ruhsatın ön yüzündeki <b>(E)</b> alanında yazar.</small>
+        </div>
+        <div class="field full"><div class="or">veya</div>
+          <label class="upload" id="upl"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span id="uplTxt">Ruhsatın fotoğrafını yükle</span><input type="file" accept="image/*" capture="environment" onchange="pickFile(this)"></label>
+        </div>
+        <div class="field" id="f-name"><label>Ad Soyad</label><input id="nameIn" placeholder="Adınız Soyadınız" autocomplete="name"></div>
+        <div class="field" id="f-tel"><label>WhatsApp Numarası</label>
+          <div class="phone"><span>+90</span><input id="telIn" type="tel" inputmode="numeric" placeholder="5XX XXX XX XX" maxlength="13" autocomplete="tel-national"></div>
+        </div>
+        <div class="field full"><label>Aradığınız parça <span style="font-weight:400">(isteğe bağlı)</span></label><input id="partIn" placeholder="örn. ön balata, devirdaim, triger seti"></div>
       </div>
-    </div>
-    <div id="t-plate" hidden>
-      <div class="field"><label>Plakanız</label>
-        <div class="plate"><span>TR</span><input id="plateIn" placeholder="34 ABC 123" maxlength="10"></div>
-      </div>
-    </div>
-    <div id="t-oem" hidden>
-      <div class="field"><label>OEM / Parça numarası</label><input id="oemIn" placeholder="örn. 410602481R"></div>
-    </div>
+      <label class="kvkk"><input type="checkbox" id="kvkkIn"><span>Bilgilerimin parça tespiti ve WhatsApp üzerinden iletişim için kullanılmasını kabul ediyorum (KVKK).</span></label>
+      <button class="btn wa-btn" type="submit"><svg class="wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.86 3 3.05 8.8 3.05 15.97c0 2.29.6 4.53 1.74 6.5L3 29l6.7-1.75a12.96 12.96 0 0 0 6.33 1.62h.01c7.17 0 13-5.8 13-12.97 0-3.47-1.35-6.73-3.8-9.18A12.9 12.9 0 0 0 16.04 3zm0 23.68h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.97 1.04 1.06-3.87-.26-.4a10.74 10.74 0 0 1-1.65-5.74c0-5.96 4.85-10.8 10.82-10.8 2.89 0 5.6 1.12 7.64 3.17a10.73 10.73 0 0 1 3.17 7.64c0 5.96-4.86 10.8-10.9 10.8zm5.93-8.09c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.16-.22.33-.84 1.06-1.03 1.27-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.27-.63-.54-.55-.73-.56h-.62c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.36c.16.22 2.3 3.5 5.56 4.91.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.41.19-1.55-.08-.13-.3-.21-.62-.37z"/></svg>Gönder, WhatsApp'tan Arayın</button>
+      <p class="hint">Mesai saatlerinde ortalama 15 dakika içinde dönüş yapıyoruz.</p>
+    </form>
 
-    <button class="btn" onclick="findParts()"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>Uyumlu Parçaları Göster</button>
-    <p class="hint">Araç bilgilerin sadece uyumlu parçaları göstermek için kullanılır.</p>
+    <div class="done">
+      <svg class="wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.86 3 3.05 8.8 3.05 15.97c0 2.29.6 4.53 1.74 6.5L3 29l6.7-1.75a12.96 12.96 0 0 0 6.33 1.62h.01c7.17 0 13-5.8 13-12.97 0-3.47-1.35-6.73-3.8-9.18A12.9 12.9 0 0 0 16.04 3zm0 23.68h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.97 1.04 1.06-3.87-.26-.4a10.74 10.74 0 0 1-1.65-5.74c0-5.96 4.85-10.8 10.82-10.8 2.89 0 5.6 1.12 7.64 3.17a10.73 10.73 0 0 1 3.17 7.64c0 5.96-4.86 10.8-10.9 10.8zm5.93-8.09c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.16-.22.33-.84 1.06-1.03 1.27-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.27-.63-.54-.55-.73-.56h-.62c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.36c.16.22 2.3 3.5 5.56 4.91.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.41.19-1.55-.08-.13-.3-.21-.62-.37z"/></svg>
+      <h4>Talebiniz alındı!</h4>
+      <p><b id="doneTel"></b> numarasına en kısa sürede WhatsApp'tan ulaşacağız.</p>
+      <button onclick="resetForm()">Yeni talep oluştur</button>
+    </div>
   </div>
-</div></div>
-
-<div class="myCar" id="myCar"><div class="wrap">
-  <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M6 17l1.5-6.5A2 2 0 0 1 9.4 9h5.2a2 2 0 0 1 1.9 1.5L18 17"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg>
-  <span>Seçili araç: <b id="myCarName"></b> · sadece bu araca uyumlu parçalar gösteriliyor</span>
-  <button onclick="clearCar()">Aracı değiştir</button>
 </div></div>
 
 <div class="trust"><div class="wrap">
@@ -399,7 +431,7 @@
 
 <!-- MARKALAR -->
 <section style="padding-top:0"><div class="wrap">
-  <div class="shead"><div><h2 class="cond">Markaya Göre Ara</h2><p>Aracının markasını seç, modelleri listeleyelim</p></div></div>
+  <div class="shead"><div><h2 class="cond">Markaya Göre Ara</h2><p>Markanı seç, ruhsat bilgilerinle sana uygun parçayı bulalım</p></div></div>
   <div class="makes" id="makes"></div>
 </div></section>
 
@@ -481,46 +513,34 @@ let favs = new Set();
 try{ cart = JSON.parse(localStorage.getItem("pst_cart")||"[]"); }catch(e){}
 const save = () => { try{ localStorage.setItem("pst_cart", JSON.stringify(cart)); }catch(e){} };
 
-/* ---------- ARAÇ SEÇİCİ ---------- */
-const sMake=$("#sMake"), sModel=$("#sModel"), sYear=$("#sYear"), sEngine=$("#sEngine");
-Object.keys(CARS).forEach(m => sMake.add(new Option(m,m)));
-function reset(sel,label){ sel.innerHTML=`<option value="">${label}</option>`; sel.disabled=true; }
-function fillModels(){
-  reset(sModel,"Model seçin"); reset(sYear,"Yıl seçin"); reset(sEngine,"Motor seçin");
-  if(!sMake.value) return;
-  Object.keys(CARS[sMake.value]).forEach(m => sModel.add(new Option(m,m))); sModel.disabled=false;
+/* ---------- RUHSAT FORMU (demo: bilgiler hiçbir yere gönderilmez) ---------- */
+let hasPhoto=false;
+function pickFile(inp){
+  const f=inp.files[0]; if(!f) return;
+  hasPhoto=true; $("#upl").classList.add("ok"); $("#uplTxt").textContent="✓ "+f.name;
 }
-function fillYears(){
-  reset(sYear,"Yıl seçin"); reset(sEngine,"Motor seçin");
-  if(!sModel.value) return;
-  for(let y=2025;y>=2012;y--) sYear.add(new Option(y,y)); sYear.disabled=false;
+const tel=$("#telIn");
+tel.addEventListener("input",()=>{
+  let d=tel.value.replace(/\D/g,"").replace(/^0/,"").slice(0,10);
+  tel.value=[d.slice(0,3),d.slice(3,6),d.slice(6,8),d.slice(8,10)].filter(Boolean).join(" ");
+});
+$("#plateIn").addEventListener("input",e=>e.target.value=e.target.value.toUpperCase());
+$("#vinIn").addEventListener("input",e=>e.target.value=e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,""));
+function bad(id,on){ $("#"+id).classList.toggle("bad",on); return on; }
+function sendForm(){
+  const plate=$("#plateIn").value.trim(), vin=$("#vinIn").value.trim(), name=$("#nameIn").value.trim(), t=tel.value.replace(/\D/g,"");
+  let err=false;
+  const noCar = plate.length<5 && vin.length<17 && !hasPhoto;
+  err |= bad("f-plate",noCar); err |= bad("f-vin",noCar && vin.length>0);
+  err |= bad("f-name",name.length<3);
+  err |= bad("f-tel",!/^5\d{9}$/.test(t));
+  if(noCar){ toast("Plaka, şasi no veya ruhsat fotoğrafından birini girin"); return; }
+  if(err){ toast("Lütfen ad soyad ve geçerli bir WhatsApp numarası girin"); return; }
+  if(!$("#kvkkIn").checked){ toast("Devam etmek için KVKK onayını işaretleyin"); return; }
+  $("#doneTel").textContent="+90 "+tel.value;
+  $("#finder").classList.add("sent");
 }
-function fillEngines(){
-  reset(sEngine,"Motor seçin");
-  if(!sYear.value) return;
-  CARS[sMake.value][sModel.value].forEach(e => sEngine.add(new Option(e,e))); sEngine.disabled=false;
-}
-function setTab(t,btn){
-  document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b===btn));
-  ["car","plate","oem"].forEach(x => $("#t-"+x).hidden = x!==t);
-  state.tab=t;
-}
-function findParts(){
-  const t = state.tab||"car";
-  if(t==="car"){
-    if(!sMake.value || !sModel.value){ toast("Lütfen en az marka ve model seçin"); return; }
-    state.car = [sMake.value, sModel.value, sYear.value, sEngine.value].filter(Boolean).join(" ");
-  } else if(t==="plate"){
-    const v=$("#plateIn").value.trim(); if(v.length<5){ toast("Geçerli bir plaka girin"); return; }
-    state.car = "Renault Clio 2019 1.5 dCi"; toast(v.toUpperCase()+" → Renault Clio 2019 1.5 dCi bulundu");
-  } else {
-    const v=$("#oemIn").value.trim(); if(!v){ toast("OEM numarası girin"); return; }
-    state.q=v; state.cat=null; render(); scrollToProducts(); return;
-  }
-  $("#myCarName").textContent = state.car; $("#myCar").classList.add("on");
-  render(); scrollToProducts();
-}
-function clearCar(){ state.car=null; $("#myCar").classList.remove("on"); render(); $("#finder").scrollIntoView({behavior:"smooth",block:"center"}); }
+function resetForm(){ $("#ruhsatForm").reset(); hasPhoto=false; $("#upl").classList.remove("ok"); $("#uplTxt").textContent="Ruhsatın fotoğrafını yükle"; $("#finder").classList.remove("sent"); }
 function scrollToProducts(){ $("#urunler").scrollIntoView({behavior:"smooth"}); }
 
 /* ---------- KATEGORİ & ÜRÜNLER ---------- */
@@ -635,7 +655,7 @@ let tt;
 function toast(msg){ $("#toastTxt").textContent = msg; $("#toast").classList.add("on"); clearTimeout(tt); tt = setTimeout(()=>$("#toast").classList.remove("on"), 2200); }
 function copyCode(el){ try{ navigator.clipboard.writeText(el.textContent); }catch(e){} toast("Kod kopyalandı: "+el.textContent); }
 $("#makes").innerHTML = Object.keys(CARS).map(m => `<button lang="en" onclick="pickMake('${m}')">${m}</button>`).join("");
-function pickMake(m){ setTab('car', document.querySelector('.tabs button')); sMake.value=m; fillModels(); $("#finder").scrollIntoView({behavior:"smooth",block:"center"}); setTimeout(()=>sModel.focus(),500); }
+function pickMake(m){ $("#partIn").value = m+" için parça"; $("#finder").scrollIntoView({behavior:"smooth",block:"center"}); setTimeout(()=>$("#plateIn").focus({preventScroll:true}),600); }
 $("#yr").textContent = new Date().getFullYear();
 
 render(); updateCart();
