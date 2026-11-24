@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pistonia Oto Yedek Parça</title>
+<title>Depor Oto Parça</title>
 <meta name="description" content="Aracınıza uygun oto yedek parçayı saniyeler içinde bulun. Demo tasarım.">
 <meta name="theme-color" content="#0b1220">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ff6a13'/><circle cx='16' cy='16' r='8' fill='none' stroke='white' stroke-width='3'/><circle cx='16' cy='16' r='2.5' fill='white'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ff6a13'/><path d='M9 7.5h6.5a8.5 8.5 0 0 1 0 17H9z' fill='white'/><circle cx='15.5' cy='16' r='4.2' fill='%23ff6a13'/><circle cx='15.5' cy='16' r='1.6' fill='white'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,7 +41,8 @@
   .logo{display:flex; align-items:center; gap:10px; color:#fff; flex:none}
   .logo .mark{width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,var(--or2),var(--or)); display:grid; place-items:center; box-shadow:0 6px 18px -6px rgba(255,106,19,.7)}
   .logo .name{font-size:1.6rem; font-weight:800; line-height:1; text-transform:uppercase}
-  .logo .name small{display:block; font-family:Inter; font-size:.58rem; font-weight:600; letter-spacing:.22em; color:#94a3b8}
+  .logo .name{letter-spacing:.04em}
+  .logo .name small{display:block; font-family:Inter; font-size:.6rem; font-weight:700; letter-spacing:.3em; color:var(--or2); margin-top:3px}
   .search{flex:1; display:flex; background:#fff; border-radius:12px; overflow:hidden; height:46px; min-width:0}
   .search input{flex:1; border:0; outline:0; padding:0 16px; min-width:0; font-size:.92rem}
   .search button{background:var(--or); color:#fff; padding:0 20px; display:flex; align-items:center; gap:8px; font-weight:600}
@@ -277,8 +278,8 @@
 
 <header><div class="wrap">
   <a class="logo" href="#">
-    <span class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5" fill="#fff"/></svg></span>
-    <span class="name cond">Pistonia<small>Oto Yedek Parça</small></span>
+    <span class="mark"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 3.5h6.5a8.5 8.5 0 0 1 0 17H5z" fill="#fff"/><circle cx="11.5" cy="12" r="4.2" fill="#ff6a13"/><circle cx="11.5" cy="12" r="1.6" fill="#fff"/><g fill="#fff"><circle cx="11.5" cy="8.9" r=".7"/><circle cx="11.5" cy="15.1" r=".7"/><circle cx="8.4" cy="12" r=".7"/><circle cx="14.6" cy="12" r=".7"/></g></svg></span>
+    <span class="name cond">Depor<small>Oto Parça</small></span>
   </a>
   <form class="search" onsubmit="event.preventDefault(); doSearch(this.q.value)">
     <input name="q" placeholder="Parça adı, OEM no veya marka ara… (örn. balata)" autocomplete="off">
@@ -389,7 +390,7 @@
   <div class="pcard b">
     <h3 class="cond">İlk Siparişe %10</h3>
     <p>Üye ol, ilk siparişinde kodu kullan.</p>
-    <span class="code" onclick="copyCode(this)" style="cursor:pointer" title="Kopyala">PISTON10</span>
+    <span class="code" onclick="copyCode(this)" style="cursor:pointer" title="Kopyala">DEPOR10</span>
   </div>
 </div></section>
 
@@ -402,14 +403,14 @@
 <footer><div class="wrap">
   <div class="cols">
     <div>
-      <a class="logo" href="#"><span class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5" fill="#fff"/></svg></span><span class="name cond">Pistonia<small>Oto Yedek Parça</small></span></a>
+      <a class="logo" href="#"><span class="mark"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 3.5h6.5a8.5 8.5 0 0 1 0 17H5z" fill="#fff"/><circle cx="11.5" cy="12" r="4.2" fill="#ff6a13"/><circle cx="11.5" cy="12" r="1.6" fill="#fff"/><g fill="#fff"><circle cx="11.5" cy="8.9" r=".7"/><circle cx="11.5" cy="15.1" r=".7"/><circle cx="8.4" cy="12" r=".7"/><circle cx="14.6" cy="12" r=".7"/></g></svg></span><span class="name cond">Depor<small>Oto Parça</small></span></a>
       <p style="margin-top:14px; max-width:32ch">Aracına uygun yedek parçayı doğru, hızlı ve uygun fiyatla bulmanın en kolay yolu.</p>
     </div>
     <div><h5>Kategoriler</h5><ul><li><a href="#urunler" onclick="setCat('fren')">Fren Sistemi</a></li><li><a href="#urunler" onclick="setCat('filtre')">Filtreler</a></li><li><a href="#urunler" onclick="setCat('motor')">Motor Parçaları</a></li><li><a href="#urunler" onclick="setCat('elektrik')">Elektrik & Akü</a></li></ul></div>
     <div><h5>Yardım</h5><ul><li><a href="#">Sipariş Takibi</a></li><li><a href="#">İade & Değişim</a></li><li><a href="#">Kargo Bilgileri</a></li><li><a href="#">Sıkça Sorulanlar</a></li></ul></div>
     <div><h5>Kurumsal</h5><ul><li><a href="#">Hakkımızda</a></li><li><a href="#">Bayi Başvurusu</a></li><li><a href="#">KVKK</a></li><li><a href="#">İletişim</a></li></ul></div>
   </div>
-  <div class="copy"><span>© <span id="yr">2026</span> Pistonia · Demo tasarım</span><span>Güvenli ödeme · 256-bit SSL</span></div>
+  <div class="copy"><span>© <span id="yr">2026</span> Depor Oto Parça · Demo tasarım</span><span>Güvenli ödeme · 256-bit SSL</span></div>
 </div></footer>
 
 <!-- SEPET -->
