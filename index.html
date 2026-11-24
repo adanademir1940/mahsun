@@ -33,6 +33,14 @@
   .intro h1 em{font-style:normal; color:var(--blue2)}
   .intro p{color:#94a3b8; margin-top:12px; font-size:1rem}
 
+  .promise{display:flex; flex-direction:column; align-items:center; gap:8px; margin:0 0 22px; padding:20px 14px 22px; border-radius:20px; color:#fff; text-align:center;
+    background:linear-gradient(135deg,rgba(37,211,102,.22),rgba(37,99,235,.18)); border:1px solid rgba(37,211,102,.45); box-shadow:0 20px 50px -24px rgba(37,211,102,.6)}
+  .promise .clock{width:52px; height:52px; flex:none; color:#4ade80}
+  .promise .clock .hand{transform-origin:24px 26px; animation:tick 4s linear infinite}
+  @keyframes tick{to{transform:rotate(360deg)}}
+  .promise .big,.promise .sub{display:block; font-family:"Barlow Condensed",Inter,sans-serif; font-weight:800; text-transform:uppercase; line-height:.95; font-size:clamp(2.4rem,12.5vw,3.6rem)}
+  .promise .big b{color:#4ade80}
+  .promise .sub em{font-style:normal; color:#4ade80}
   .card{background:#fff; border-radius:20px; padding:22px; box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
   .wa{width:22px; height:22px; flex:none}
   .waNote{display:flex; gap:12px; align-items:flex-start; background:#e9fbef; border:1px solid #b7ecc8; color:#14532d; border-radius:12px; padding:12px 14px; font-size:.86rem; line-height:1.45; margin-bottom:18px}
@@ -82,7 +90,7 @@
 
   .toast{position:fixed; left:50%; bottom:24px; transform:translate(-50%,120px); opacity:0; visibility:hidden; background:var(--ink); color:#fff; padding:12px 18px; border-radius:12px; font-size:.88rem; z-index:70; transition:transform .3s, opacity .3s, visibility .3s; box-shadow:0 20px 40px -10px rgba(0,0,0,.5); max-width:calc(100% - 32px); border:1px solid rgba(255,255,255,.1)}
   .toast.on{transform:translate(-50%,0); opacity:1; visibility:visible}
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
 </style>
 </head>
 <body>
@@ -100,6 +108,11 @@
   <div class="intro">
     <h1 class="cond">Aracına <em>uygun</em> parçayı biz bulalım</h1>
     <p>Ruhsat bilgilerini gönder, ustalarımız doğru parçayı ve fiyatını belirleyip sana WhatsApp'tan ulaşsın.</p>
+  </div>
+
+  <div class="promise">
+    <svg class="clock" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><circle cx="24" cy="26" r="17"/><path d="M19 4h10M24 4v5M38 11l3-3"/><path class="hand" d="M24 26V15" stroke-linecap="round"/><circle cx="24" cy="26" r="2" fill="currentColor"/></svg>
+    <div><span class="big"><b>30 dakika</b> içerisinde</span><span class="sub"><em>%100</em> dönüyoruz</span></div>
   </div>
 
   <div class="card" id="card">
@@ -126,13 +139,13 @@
 
       <label class="kvkk"><input type="checkbox" id="kvkkIn"><span>Bilgilerimin parça tespiti ve WhatsApp üzerinden iletişim için kullanılmasını kabul ediyorum (KVKK).</span></label>
       <button class="send" type="submit"><svg class="wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.86 3 3.05 8.8 3.05 15.97c0 2.29.6 4.53 1.74 6.5L3 29l6.7-1.75a12.96 12.96 0 0 0 6.33 1.62h.01c7.17 0 13-5.8 13-12.97 0-3.47-1.35-6.73-3.8-9.18A12.9 12.9 0 0 0 16.04 3zm0 23.68h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.97 1.04 1.06-3.87-.26-.4a10.74 10.74 0 0 1-1.65-5.74c0-5.96 4.85-10.8 10.82-10.8 2.89 0 5.6 1.12 7.64 3.17a10.73 10.73 0 0 1 3.17 7.64c0 5.96-4.86 10.8-10.9 10.8zm5.93-8.09c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.16-.22.33-.84 1.06-1.03 1.27-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.27-.63-.54-.55-.73-.56h-.62c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.36c.16.22 2.3 3.5 5.56 4.91.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.41.19-1.55-.08-.13-.3-.21-.62-.37z"/></svg>Gönder, WhatsApp'tan Arayın</button>
-      <p class="hint">Mesai saatlerinde ortalama 15 dakika içinde dönüş yapıyoruz.</p>
+      <p class="hint">Talebinize 30 dakika içerisinde %100 dönüş yapıyoruz.</p>
     </form>
 
     <div class="done">
       <svg class="wa" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.86 3 3.05 8.8 3.05 15.97c0 2.29.6 4.53 1.74 6.5L3 29l6.7-1.75a12.96 12.96 0 0 0 6.33 1.62h.01c7.17 0 13-5.8 13-12.97 0-3.47-1.35-6.73-3.8-9.18A12.9 12.9 0 0 0 16.04 3zm0 23.68h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.97 1.04 1.06-3.87-.26-.4a10.74 10.74 0 0 1-1.65-5.74c0-5.96 4.85-10.8 10.82-10.8 2.89 0 5.6 1.12 7.64 3.17a10.73 10.73 0 0 1 3.17 7.64c0 5.96-4.86 10.8-10.9 10.8zm5.93-8.09c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.16-.22.33-.84 1.06-1.03 1.27-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.27-.63-.54-.55-.73-.56h-.62c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.36c.16.22 2.3 3.5 5.56 4.91.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.41.19-1.55-.08-.13-.3-.21-.62-.37z"/></svg>
       <h2>Talebiniz alındı!</h2>
-      <p><b id="doneTel"></b> numarasına en kısa sürede WhatsApp'tan ulaşacağız.</p>
+      <p><b id="doneTel"></b> numarasına 30 dakika içerisinde WhatsApp'tan ulaşacağız.</p>
       <button onclick="resetForm()">Yeni talep oluştur</button>
     </div>
   </div>
