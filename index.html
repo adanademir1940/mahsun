@@ -6,7 +6,7 @@
 <title>Depor Oto Parça</title>
 <meta name="description" content="Aracınıza uygun oto yedek parçayı saniyeler içinde bulun. Demo tasarım.">
 <meta name="theme-color" content="#0b1220">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ff6a13'/><path d='M9 7.5h6.5a8.5 8.5 0 0 1 0 17H9z' fill='white'/><circle cx='15.5' cy='16' r='4.2' fill='%23ff6a13'/><circle cx='15.5' cy='16' r='1.6' fill='white'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><path d='M9 7.5h6.5a8.5 8.5 0 0 1 0 17H9z' fill='white'/><circle cx='15.5' cy='16' r='4.2' fill='%232563eb'/><circle cx='15.5' cy='16' r='1.6' fill='white'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
   :root{
     --ink:#0b1220; --ink2:#131c2e; --ink3:#1c2840;
     --bg:#f4f6f9; --card:#fff; --line:#e3e8ef; --text:#0f172a; --muted:#64748b;
-    --or:#ff6a13; --or2:#ff8a3d; --or-soft:#fff1e8; --green:#16a34a; --red:#e11d48;
+    --or:#2563eb; --or2:#60a5fa; --or-soft:#eff6ff; --green:#16a34a; --red:#e11d48;
     --r:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -39,7 +39,7 @@
   header{background:var(--ink); position:sticky; top:0; z-index:40; border-bottom:1px solid rgba(255,255,255,.06)}
   header .wrap{display:flex; align-items:center; gap:20px; height:72px}
   .logo{display:flex; align-items:center; gap:10px; color:#fff; flex:none}
-  .logo .mark{width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,var(--or2),var(--or)); display:grid; place-items:center; box-shadow:0 6px 18px -6px rgba(255,106,19,.7)}
+  .logo .mark{width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,var(--or2),var(--or)); display:grid; place-items:center; box-shadow:0 6px 18px -6px rgba(37,99,235,.7)}
   .logo .name{font-size:1.6rem; font-weight:800; line-height:1; text-transform:uppercase}
   .logo .name{letter-spacing:.04em}
   .logo .name small{display:block; font-family:Inter; font-size:.6rem; font-weight:700; letter-spacing:.3em; color:var(--or2); margin-top:3px}
@@ -70,11 +70,11 @@
   .nav a.hot{color:var(--or2)}
 
   /* Hero */
-  .hero{position:relative; background:radial-gradient(ellipse 70% 90% at 85% 10%, rgba(255,106,19,.28), transparent 60%), linear-gradient(180deg,var(--ink2),var(--ink)); color:#fff; overflow:hidden}
+  .hero{position:relative; background:radial-gradient(ellipse 70% 90% at 85% 10%, rgba(37,99,235,.28), transparent 60%), linear-gradient(180deg,var(--ink2),var(--ink)); color:#fff; overflow:hidden}
   .hero::before{content:""; position:absolute; inset:0; opacity:.5; background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px); background-size:40px 40px; -webkit-mask:linear-gradient(180deg,#000,transparent); mask:linear-gradient(180deg,#000,transparent)}
   .hero .wrap{position:relative; display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center; padding-top:64px; padding-bottom:72px}
-  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:.78rem; font-weight:600; color:var(--or2); background:rgba(255,106,19,.12); border:1px solid rgba(255,106,19,.3); padding:6px 12px; border-radius:99px}
-  .eyebrow i{width:7px; height:7px; border-radius:50%; background:var(--or); box-shadow:0 0 0 4px rgba(255,106,19,.25)}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:.78rem; font-weight:600; color:var(--or2); background:rgba(37,99,235,.12); border:1px solid rgba(37,99,235,.3); padding:6px 12px; border-radius:99px}
+  .eyebrow i{width:7px; height:7px; border-radius:50%; background:var(--or); box-shadow:0 0 0 4px rgba(37,99,235,.25)}
   .hero h1{font-size:clamp(2.6rem,6vw,4.4rem); font-weight:800; line-height:.95; text-transform:uppercase; margin:18px 0 16px}
   .hero h1 em{font-style:normal; color:var(--or)}
   .hero p.lead{color:#94a3b8; font-size:1.05rem; max-width:46ch}
@@ -100,14 +100,14 @@
   .plate span{background:#1d4ed8; color:#fff; width:40px; display:grid; place-items:center; font-weight:700; font-size:.8rem}
   .plate input{flex:1; border:0; outline:0; font-family:"Barlow Condensed"; font-size:1.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; text-align:center; min-width:0}
   .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; height:50px; padding:0 22px; border-radius:12px; background:var(--or); color:#fff; font-weight:700; transition:background .2s, transform .1s}
-  .btn:hover{background:#f05a00}
+  .btn:hover{background:#1d4ed8}
   .btn:active{transform:scale(.98)}
   .finder .btn{width:100%; margin-top:14px}
   .finder .hint{margin-top:10px; font-size:.76rem; color:var(--muted); text-align:center}
   @media (max-width:900px){.hero .wrap{grid-template-columns:1fr; gap:32px; padding-top:40px; padding-bottom:48px}}
 
   /* Seçili araç şeridi */
-  .myCar{display:none; background:var(--or-soft); border-bottom:1px solid #ffd9c2}
+  .myCar{display:none; background:var(--or-soft); border-bottom:1px solid #bfdbfe}
   .myCar.on{display:block}
   .myCar .wrap{display:flex; align-items:center; gap:12px; padding-top:12px; padding-bottom:12px; font-size:.9rem; flex-wrap:wrap}
   .myCar svg{color:var(--or)}
@@ -131,7 +131,7 @@
   /* Kategoriler */
   .cats{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
   .cat{background:#fff; border:1px solid var(--line); border-radius:var(--r); padding:20px; display:flex; align-items:center; gap:16px; transition:border-color .2s, box-shadow .2s, transform .2s; text-align:left}
-  .cat:hover,.cat.on{border-color:var(--or); box-shadow:0 12px 30px -14px rgba(255,106,19,.45); transform:translateY(-2px)}
+  .cat:hover,.cat.on{border-color:var(--or); box-shadow:0 12px 30px -14px rgba(37,99,235,.45); transform:translateY(-2px)}
   .cat .pic{width:60px; height:60px; border-radius:14px; background:linear-gradient(135deg,#f1f5f9,#e2e8f0); display:grid; place-items:center; flex:none; color:var(--ink3)}
   .cat .pic svg{width:36px; height:36px}
   .cat.on .pic{background:var(--or); color:#fff}
@@ -185,7 +185,7 @@
   .promo{display:grid; grid-template-columns:1.4fr 1fr; gap:16px}
   .pcard{position:relative; overflow:hidden; border-radius:20px; padding:36px; color:#fff; min-height:220px; display:flex; flex-direction:column; justify-content:center}
   .pcard.a{background:linear-gradient(120deg,var(--ink) 30%,#1e3a8a)}
-  .pcard.b{background:linear-gradient(135deg,var(--or2),var(--or) 60%,#d94e00)}
+  .pcard.b{background:linear-gradient(135deg,var(--or2),var(--or) 60%,#1e3a8a)}
   .pcard h3{font-size:2.4rem; font-weight:800; text-transform:uppercase; line-height:.95; max-width:12ch}
   .pcard p{opacity:.8; margin:10px 0 18px; max-width:34ch; font-size:.92rem}
   .pcard .btn{align-self:flex-start; background:#fff; color:var(--ink); height:44px}
@@ -249,7 +249,7 @@
   <!-- Fren diski -->
   <symbol id="disc" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/><circle cx="32" cy="32" r="22" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="32" cy="32" r="12" fill="#475569"/><circle cx="32" cy="32" r="4" fill="#e2e8f0"/><g fill="#e2e8f0"><circle cx="32" cy="24" r="1.8"/><circle cx="39.6" cy="29.5" r="1.8"/><circle cx="36.7" cy="38.5" r="1.8"/><circle cx="27.3" cy="38.5" r="1.8"/><circle cx="24.4" cy="29.5" r="1.8"/></g></symbol>
   <!-- Fren balatası -->
-  <symbol id="pad" viewBox="0 0 64 64"><path d="M8 24c8-10 40-10 48 0v10c-8-6-40-6-48 0z" fill="#475569"/><path d="M10 32c8-6 36-6 44 0v10c-8-5-36-5-44 0z" fill="#ff6a13"/><path d="M10 42c8-5 36-5 44 0" stroke="#c2410c" stroke-width="2" fill="none"/><circle cx="18" cy="27" r="2" fill="#cbd5e1"/><circle cx="46" cy="27" r="2" fill="#cbd5e1"/></symbol>
+  <symbol id="pad" viewBox="0 0 64 64"><path d="M8 24c8-10 40-10 48 0v10c-8-6-40-6-48 0z" fill="#475569"/><path d="M10 32c8-6 36-6 44 0v10c-8-5-36-5-44 0z" fill="#2563eb"/><path d="M10 42c8-5 36-5 44 0" stroke="#1e40af" stroke-width="2" fill="none"/><circle cx="18" cy="27" r="2" fill="#cbd5e1"/><circle cx="46" cy="27" r="2" fill="#cbd5e1"/></symbol>
   <!-- Yağ filtresi -->
   <symbol id="filter" viewBox="0 0 64 64"><rect x="16" y="14" width="32" height="40" rx="6" fill="#1d4ed8"/><rect x="16" y="22" width="32" height="5" fill="#1e40af"/><rect x="14" y="10" width="36" height="8" rx="3" fill="#475569"/><rect x="22" y="32" width="20" height="12" rx="2" fill="#fff" opacity=".9"/><path d="M25 38h14" stroke="#1d4ed8" stroke-width="2"/></symbol>
   <!-- Hava filtresi -->
@@ -259,11 +259,11 @@
   <!-- Amortisör -->
   <symbol id="shock" viewBox="0 0 64 64"><circle cx="32" cy="8" r="5" fill="none" stroke="#475569" stroke-width="3"/><rect x="29" y="12" width="6" height="18" fill="#cbd5e1"/><path d="M20 18c8 3 16 3 24 0M20 24c8 3 16 3 24 0M20 30c8 3 16 3 24 0M20 36c8 3 16 3 24 0M20 42c8 3 16 3 24 0" stroke="#e11d48" stroke-width="3" fill="none"/><rect x="25" y="30" width="14" height="22" rx="3" fill="#1f2937"/><circle cx="32" cy="57" r="5" fill="none" stroke="#475569" stroke-width="3"/></symbol>
   <!-- Akü -->
-  <symbol id="battery" viewBox="0 0 64 64"><rect x="8" y="18" width="48" height="34" rx="4" fill="#1f2937"/><rect x="8" y="18" width="48" height="8" rx="3" fill="#374151"/><rect x="14" y="12" width="8" height="7" rx="1" fill="#e11d48"/><rect x="42" y="12" width="8" height="7" rx="1" fill="#64748b"/><path d="M15 34h6M18 31v6M43 34h6" stroke="#fff" stroke-width="2"/><rect x="16" y="42" width="32" height="5" rx="2" fill="#ff6a13"/></symbol>
+  <symbol id="battery" viewBox="0 0 64 64"><rect x="8" y="18" width="48" height="34" rx="4" fill="#1f2937"/><rect x="8" y="18" width="48" height="8" rx="3" fill="#374151"/><rect x="14" y="12" width="8" height="7" rx="1" fill="#e11d48"/><rect x="42" y="12" width="8" height="7" rx="1" fill="#64748b"/><path d="M15 34h6M18 31v6M43 34h6" stroke="#fff" stroke-width="2"/><rect x="16" y="42" width="32" height="5" rx="2" fill="#2563eb"/></symbol>
   <!-- Far ampulü -->
   <symbol id="bulb" viewBox="0 0 64 64"><circle cx="32" cy="24" r="16" fill="#fef9c3" stroke="#facc15" stroke-width="2"/><path d="M26 24c2-4 10-4 12 0" stroke="#ca8a04" stroke-width="2" fill="none"/><rect x="25" y="38" width="14" height="8" fill="#94a3b8"/><rect x="22" y="46" width="20" height="6" rx="1" fill="#475569"/><rect x="29" y="52" width="6" height="8" fill="#64748b"/></symbol>
   <!-- Motor yağı -->
-  <symbol id="oil" viewBox="0 0 64 64"><path d="M18 14h20l8 8v34a3 3 0 0 1-3 3H18a3 3 0 0 1-3-3V17a3 3 0 0 1 3-3z" fill="#0f172a"/><rect x="34" y="6" width="8" height="8" rx="1" fill="#ff6a13"/><rect x="19" y="26" width="24" height="22" rx="2" fill="#ff6a13"/><text x="31" y="40" font-family="Arial" font-weight="700" font-size="9" fill="#fff" text-anchor="middle">5W30</text></symbol>
+  <symbol id="oil" viewBox="0 0 64 64"><path d="M18 14h20l8 8v34a3 3 0 0 1-3 3H18a3 3 0 0 1-3-3V17a3 3 0 0 1 3-3z" fill="#0f172a"/><rect x="34" y="6" width="8" height="8" rx="1" fill="#2563eb"/><rect x="19" y="26" width="24" height="22" rx="2" fill="#2563eb"/><text x="31" y="40" font-family="Arial" font-weight="700" font-size="9" fill="#fff" text-anchor="middle">5W30</text></symbol>
   <!-- Silecek -->
   <symbol id="wiper" viewBox="0 0 64 64"><path d="M6 50 54 14" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><path d="M8 54 56 18" stroke="#475569" stroke-width="2" stroke-linecap="round"/><rect x="26" y="28" width="10" height="6" rx="1" transform="rotate(-37 31 31)" fill="#64748b"/></symbol>
   <!-- Triger seti -->
@@ -281,7 +281,7 @@
 
 <header><div class="wrap">
   <a class="logo" href="#">
-    <span class="mark"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 3.5h6.5a8.5 8.5 0 0 1 0 17H5z" fill="#fff"/><circle cx="11.5" cy="12" r="4.2" fill="#ff6a13"/><circle cx="11.5" cy="12" r="1.6" fill="#fff"/><g fill="#fff"><circle cx="11.5" cy="8.9" r=".7"/><circle cx="11.5" cy="15.1" r=".7"/><circle cx="8.4" cy="12" r=".7"/><circle cx="14.6" cy="12" r=".7"/></g></svg></span>
+    <span class="mark"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 3.5h6.5a8.5 8.5 0 0 1 0 17H5z" fill="#fff"/><circle cx="11.5" cy="12" r="4.2" fill="#2563eb"/><circle cx="11.5" cy="12" r="1.6" fill="#fff"/><g fill="#fff"><circle cx="11.5" cy="8.9" r=".7"/><circle cx="11.5" cy="15.1" r=".7"/><circle cx="8.4" cy="12" r=".7"/><circle cx="14.6" cy="12" r=".7"/></g></svg></span>
     <span class="name cond">Depor<small>Oto Parça</small></span>
   </a>
   <form class="search" onsubmit="event.preventDefault(); doSearch(this.q.value)">
@@ -406,7 +406,7 @@
 <footer><div class="wrap">
   <div class="cols">
     <div>
-      <a class="logo" href="#"><span class="mark"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 3.5h6.5a8.5 8.5 0 0 1 0 17H5z" fill="#fff"/><circle cx="11.5" cy="12" r="4.2" fill="#ff6a13"/><circle cx="11.5" cy="12" r="1.6" fill="#fff"/><g fill="#fff"><circle cx="11.5" cy="8.9" r=".7"/><circle cx="11.5" cy="15.1" r=".7"/><circle cx="8.4" cy="12" r=".7"/><circle cx="14.6" cy="12" r=".7"/></g></svg></span><span class="name cond">Depor<small>Oto Parça</small></span></a>
+      <a class="logo" href="#"><span class="mark"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 3.5h6.5a8.5 8.5 0 0 1 0 17H5z" fill="#fff"/><circle cx="11.5" cy="12" r="4.2" fill="#2563eb"/><circle cx="11.5" cy="12" r="1.6" fill="#fff"/><g fill="#fff"><circle cx="11.5" cy="8.9" r=".7"/><circle cx="11.5" cy="15.1" r=".7"/><circle cx="8.4" cy="12" r=".7"/><circle cx="14.6" cy="12" r=".7"/></g></svg></span><span class="name cond">Depor<small>Oto Parça</small></span></a>
       <p style="margin-top:14px; max-width:32ch">Aracına uygun yedek parçayı doğru, hızlı ve uygun fiyatla bulmanın en kolay yolu.</p>
     </div>
     <div><h5>Kategoriler</h5><ul><li><a href="#urunler" onclick="setCat('fren')">Fren Sistemi</a></li><li><a href="#urunler" onclick="setCat('filtre')">Filtreler</a></li><li><a href="#urunler" onclick="setCat('motor')">Motor Parçaları</a></li><li><a href="#urunler" onclick="setCat('elektrik')">Elektrik & Akü</a></li></ul></div>
@@ -455,7 +455,7 @@ const P = [
   {id:1,cat:"fren",icon:"pad",brand:"StopTech Pro",name:"Ön Fren Balata Takımı",oem:"410602481R",price:1249,old:1690,rate:4.8,rev:1284,stock:42,tags:["best","deal"]},
   {id:2,cat:"fren",icon:"disc",brand:"StopTech Pro",name:"Havalandırmalı Ön Fren Diski (2'li)",oem:"402060010R",price:2890,old:null,rate:4.7,rev:642,stock:18,tags:["best"]},
   {id:3,cat:"filtre",icon:"filter",brand:"PureFlow",name:"Yağ Filtresi",oem:"152089599R",price:189,old:245,rate:4.9,rev:3210,stock:310,tags:["best","deal"]},
-  {id:4,cat:"filtre",icon:"air",brand:"PureFlow",name:"Hava Filtresi",oem:"165467674R",price:329,old:null,rate:4.8,rev:1876,stock:154,tags:["best"]},
+  {id:4,cat:"filtre",icon:"air",brand:"PureFlow",name:"Hava Filtresi",oem:"165467674R",price:329,old:null,rate:4.8,rev:1876,stock:154,tags:["new"]},
   {id:5,cat:"motor",icon:"plug",brand:"IgniCore",name:"İridyum Buji Seti (4 Adet)",oem:"224019132R",price:1180,old:1490,rate:4.9,rev:954,stock:64,tags:["best","deal"]},
   {id:6,cat:"motor",icon:"belt",brand:"DriveLine",name:"Triger Seti + Devirdaim",oem:"130C11551R",price:4650,old:5390,rate:4.7,rev:388,stock:7,tags:["deal"]},
   {id:7,cat:"suspansiyon",icon:"shock",brand:"RideMax",name:"Ön Amortisör (Gazlı)",oem:"543022953R",price:2190,old:null,rate:4.6,rev:512,stock:26,tags:["best"]},
